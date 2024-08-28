@@ -1,0 +1,22 @@
+[build]
+  # Command to build the project if needed
+  command = "npm run build"
+  # Directory where the build output will be placed
+  publish = "dist"
+
+# Define the functions directory if using Netlify functions
+# functions = "functions"
+
+[[redirects]]
+  # Redirect from root to /explorer
+  from = "/"
+  to = "/explorer"
+  status = 301
+  force = true
+
+[[redirects]]
+  # Handle all other routes via your server (serverless function)
+  from = "/*"
+  to = "/server.js"
+  status = 200
+  force = true
